@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "language": "简体中文",
+    "translator": "Walter"
+  },
+  "prompts": {
+    "lhm_title": "使用建议",
+    "lhm_text": "为了获取详细的传感器数据（CPU/GPU 温度等），给您提供更完整地保障，建议您下载并开机自动启动 LibreHardwareMonitor (高效、隐私、开源)。\n\n当然，即使不运行它，WindowsLoggerLite 的其它功能仍旧不会受到影响。\n\nLHM 的全球下载链接已复制到您的剪贴板，可以粘贴到浏览器地址栏中访问。",
+    "removable_drive_title": "确认数据存储位置",
+    "removable_drive_text": "WindowsLoggerLite 首选的日志数据存储路径（D: 盘）似乎是可移动磁盘，是否要将 SystemLog 文件夹创建到其中？\n\n- 选择“是”继续在 D: 盘创建（用于特定的 IT 维护场景）。\n- 选择“否”将改为使用 C: 盘（更常用的选择）。\n- 选择“取消”将退出程序。"
+  },
+  "logs": {
+    "sheets": {
+      "hardware": "硬件记录",
+      "events": "使用事件",
+      "info": "计算机信息"
+    },
+    "columns": {
+      "hardware": {
+        "timestamp": "时间戳", "cpu_util": "CPU 利用率 (%)", "cpu_temp": "CPU 温度 (°C)", "fan_speed": "风扇转速 (RPM)", "mem_util": "内存利用率 (%)", "mem_avail": "可用内存 (GB)", "gpu_util": "GPU 利用率 (%)", "gpu_temp": "GPU 温度 (°C)", "disk_read": "硬盘读速 (MB/s)", "disk_write": "硬盘写速 (MB/s)", "disk_avail": "可用盘容 (GB)", "disk_temp": "硬盘温度 (°C)", "net_adapter": "适配器名称", "net_ssid": "SSID", "net_type": "连接类型", "net_band": "网络波段", "net_upload": "上传速度 (Mbps)", "net_download": "下载速度 (Mbps)"
+      },
+      "events": {
+        "timestamp": "时间戳", "event_type": "事件类型", "app_name": "应用程序名称", "path": "路径"
+      },
+      "info": {
+        "device_name": "设备名称", "processor": "处理器型号", "gpu": "显示适配器型号", "ram_manufacturer": "内存厂商", "ram_part_number": "内存部件号", "ram_total": "总内存 (GB)", "disk_model": "硬盘型号", "disk_capacity": "硬盘容量 (GB)", "net_adapter_model": "网络适配器型号", "mac_address": "MAC地址", "ip_address": "IP 地址", "timezone": "时区", "region": "区域", "auto_time_status": "自动时间状态", "auto_timezone_status": "自动时区状态", "ntp_status": "NTP 校时状态", "time_offset": "系统时间偏移 (秒)", "device_id": "设备 ID", "product_id": "产品 ID", "windows_version": "Windows 版本", "windows_version_num": "Windows 版本号", "install_date": "安装日期", "os_build": "操作系统版本"
+      }
+    },
+    "file_suffixes": {
+      "hardware": "硬件记录",
+      "events": "使用事件"
+    },
+    "event_types": {
+      "start": "启动",
+      "close": "关闭"
+    }
+  },
+  "status": {
+    "enabled": "已启用", "disabled": "已禁用", "unexecuted": "未执行", "success": "成功", "failure": "失败"
+  },
+  "region_map": {
+    "CN": "中国", "US": "美国", "JP": "日本", "KR": "韩国", "GB": "英国"
+  }
+}

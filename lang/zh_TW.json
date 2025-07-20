@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "language": "繁體中文",
+    "translator": "Walter"
+  },
+  "prompts": {
+    "lhm_title": "使用建議",
+    "lhm_text": "爲了獲取詳細的感測器數據（CPU/GPU 溫度等），給您提供更完整地保障，建議您下載並開機自動啓動 LibreHardwareMonitor (高效、隱私、開源)。\n\n當然，即使不運行它，WindowsLoggerLite 的其它功能仍舊不會受到影響。\n\nLHM 的全球下載連結已複製到您的剪貼簿，可以粘貼到瀏覽器地址欄中訪問。",
+    "removable_drive_title": "確認數據存儲位置",
+    "removable_drive_text": "WindowsLoggerLite 首選的日誌數據存儲路徑（D: 盤）似乎是可移動磁碟，是否要將 SystemLog 資料夾創建到其中？\n\n- 選擇「是」繼續在 D: 盤創建（用於特定的 IT 維護場景）。\n- 選擇「否」將改爲使用 C: 盤（更常用的選擇）。\n- 選擇「取消」將退出程式。"
+  },
+  "logs": {
+    "sheets": {
+      "hardware": "硬體記錄",
+      "events": "使用事件",
+      "info": "電腦資訊"
+    },
+    "columns": {
+      "hardware": {
+        "timestamp": "時間戳", "cpu_util": "CPU 使用率 (%)", "cpu_temp": "CPU 溫度 (°C)", "fan_speed": "風扇轉速 (RPM)", "mem_util": "記憶體使用率 (%)", "mem_avail": "可用記憶體 (GB)", "gpu_util": "GPU 使用率 (%)", "gpu_temp": "GPU 溫度 (°C)", "disk_read": "硬碟讀取速度 (MB/s)", "disk_write": "硬碟寫入速度 (MB/s)", "disk_avail": "可用磁碟空間 (GB)", "disk_temp": "硬碟溫度 (°C)", "net_adapter": "網路介面卡名稱", "net_ssid": "SSID", "net_type": "連線類型", "net_band": "網路頻段", "net_upload": "上傳速度 (Mbps)", "net_download": "下載速度 (Mbps)"
+      },
+      "events": {
+        "timestamp": "時間戳", "event_type": "事件類型", "app_name": "應用程式名稱", "path": "路徑"
+      },
+      "info": {
+        "device_name": "裝置名稱", "processor": "處理器型號", "gpu": "顯示卡型號", "ram_manufacturer": "記憶體製造商", "ram_part_number": "記憶體零件號", "ram_total": "總記憶體 (GB)", "disk_model": "硬碟型號", "disk_capacity": "硬碟容量 (GB)", "net_adapter_model": "網路介面卡型號", "mac_address": "MAC 位址", "ip_address": "IP 位址", "timezone": "時區", "region": "地區", "auto_time_status": "自動時間狀態", "auto_timezone_status": "自動時區狀態", "ntp_status": "NTP 校時狀態", "time_offset": "系統時間偏移 (秒)", "device_id": "裝置 ID", "product_id": "產品 ID", "windows_version": "Windows 版本", "windows_version_num": "Windows 版本號", "install_date": "安裝日期", "os_build": "作業系統組建"
+      }
+    },
+    "file_suffixes": {
+      "hardware": "硬體記錄",
+      "events": "使用事件"
+    },
+    "event_types": {
+      "start": "啓動",
+      "close": "關閉"
+    }
+  },
+  "status": {
+    "enabled": "已啓用", "disabled": "已停用", "unexecuted": "未執行", "success": "成功", "failure": "失敗"
+  },
+  "region_map": {
+    "CN": "中國", "US": "美國", "JP": "日本", "KR": "韓國", "GB": "英國"
+  }
+}

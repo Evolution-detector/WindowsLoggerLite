@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "language": "English",
+    "translator": "Walter"
+  },
+  "prompts": {
+    "lhm_title": "Recommendation",
+    "lhm_text": "To obtain detailed sensor data (CPU/GPU temperature, etc.) and provide you with more complete assurance, it is recommended that you download and auto-start LibreHardwareMonitor (efficient, private, open-source).\n\nOf course, other functions of WindowsLoggerLite will continue to work normally even without it.\n\nThe global download link for LHM has been copied to your clipboard and can be pasted into your browser's address bar to access.",
+    "removable_drive_title": "Confirm Data Storage Location",
+    "removable_drive_text": "WindowsLoggerLite's preferred log data storage path (D: drive) appears to be a removable disk. Do you still want to create the SystemLog folder in it?\n\n- Select 'Yes' to continue creating on D: drive (for specific IT maintenance scenarios).\n- Select 'No' to use the C: drive instead (the more common choice).\n- Select 'Cancel' to exit the program."
+  },
+  "logs": {
+    "sheets": {
+      "hardware": "Hardware Log",
+      "events": "Usage Events",
+      "info": "Computer Information"
+    },
+    "columns": {
+      "hardware": {
+        "timestamp": "Timestamp", "cpu_util": "CPU Utilization (%)", "cpu_temp": "CPU Temperature (°C)", "fan_speed": "Fan Speed (RPM)", "mem_util": "Memory Utilization (%)", "mem_avail": "Available Memory (GB)", "gpu_util": "GPU Utilization (%)", "gpu_temp": "GPU Temperature (°C)", "disk_read": "Disk Read Speed (MB/s)", "disk_write": "Disk Write Speed (MB/s)", "disk_avail": "Available Disk Space (GB)", "disk_temp": "Disk Temperature (°C)", "net_adapter": "Adapter Name", "net_ssid": "SSID", "net_type": "Connection Type", "net_band": "Network Band", "net_upload": "Upload Speed (Mbps)", "net_download": "Download Speed (Mbps)"
+      },
+      "events": {
+        "timestamp": "Timestamp", "event_type": "Event Type", "app_name": "Application Name", "path": "Path"
+      },
+      "info": {
+        "device_name": "Device Name", "processor": "Processor Model", "gpu": "Display Adapter Model", "ram_manufacturer": "RAM Manufacturer", "ram_part_number": "RAM Part Number", "ram_total": "Total Memory (GB)", "disk_model": "Disk Model", "disk_capacity": "Disk Capacity (GB)", "net_adapter_model": "Network Adapter Model", "mac_address": "MAC Address", "ip_address": "IP Address", "timezone": "Time Zone", "region": "Region", "auto_time_status": "Auto Time Status", "auto_timezone_status": "Auto Timezone Status", "ntp_status": "NTP Check Status", "time_offset": "System Time Offset (s)", "device_id": "Device ID", "product_id": "Product ID", "windows_version": "Windows Version", "windows_version_num": "Windows Version Number", "install_date": "Installation Date", "os_build": "OS Build"
+      }
+    },
+    "file_suffixes": {
+      "hardware": "HardwareLog",
+      "events": "UsageEvents"
+    },
+    "event_types": {
+      "start": "Start",
+      "close": "Close"
+    }
+  },
+  "status": {
+    "enabled": "Enabled", "disabled": "Disabled", "unexecuted": "Not Performed", "success": "Success", "failure": "Failure"
+  },
+  "region_map": {
+    "CN": "China", "US": "United States", "JP": "Japan", "KR": "South Korea", "GB": "United Kingdom"
+  }
+}

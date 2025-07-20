@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "language": "Español",
+    "translator": "AI"
+  },
+  "prompts": {
+    "lhm_title": "Recomendación",
+    "lhm_text": "Para obtener datos detallados de los sensores (temperatura de CPU/GPU, etc.) y proporcionarle una garantía más completa, se recomienda que descargue e inicie automáticamente LibreHardwareMonitor (eficiente, privado, de código abierto).\n\nPor supuesto, las demás funciones de WindowsLoggerLite seguirán funcionando normalmente incluso sin él.\n\nEl enlace de descarga global de LHM se ha copiado a su portapapeles y se puede pegar en la barra de direcciones de su navegador para acceder.",
+    "removable_drive_title": "Confirmar la ubicación de almacenamiento de datos",
+    "removable_drive_text": "La ruta de almacenamiento de datos de registro preferida de WindowsLoggerLite (unidad D:) parece ser un disco extraíble. ¿Desea crear la carpeta SystemLog en él?\n\n- Seleccione 'Sí' para continuar creando en la unidad D: (para escenarios específicos de mantenimiento de TI).\n- Seleccione 'No' para usar la unidad C: en su lugar (la opción más común).\n- Seleccione 'Cancelar' para salir del programa."
+  },
+  "logs": {
+    "sheets": {
+      "hardware": "Registro de Hardware",
+      "events": "Eventos de Uso",
+      "info": "Información del Ordenador"
+    },
+    "columns": {
+      "hardware": {
+        "timestamp": "Marca de Tiempo", "cpu_util": "Uso de CPU (%)", "cpu_temp": "Temperatura CPU (°C)", "fan_speed": "Velocidad Ventilador (RPM)", "mem_util": "Uso de Memoria (%)", "mem_avail": "Memoria Disponible (GB)", "gpu_util": "Uso de GPU (%)", "gpu_temp": "Temperatura GPU (°C)", "disk_read": "Velocidad Lectura Disco (MB/s)", "disk_write": "Velocidad Escritura Disco (MB/s)", "disk_avail": "Espacio Disponible Disco (GB)", "disk_temp": "Temperatura Disco (°C)", "net_adapter": "Nombre Adaptador", "net_ssid": "SSID", "net_type": "Tipo de Conexión", "net_band": "Banda de Red", "net_upload": "Velocidad de Subida (Mbps)", "net_download": "Velocidad de Bajada (Mbps)"
+      },
+      "events": {
+        "timestamp": "Marca de Tiempo", "event_type": "Tipo de Evento", "app_name": "Nombre de Aplicación", "path": "Ruta"
+      },
+      "info": {
+        "device_name": "Nombre del Dispositivo", "processor": "Modelo de Procesador", "gpu": "Modelo de Adaptador de Pantalla", "ram_manufacturer": "Fabricante de RAM", "ram_part_number": "Número de Parte de RAM", "ram_total": "Memoria Total (GB)", "disk_model": "Modelo de Disco", "disk_capacity": "Capacidad de Disco (GB)", "net_adapter_model": "Modelo de Adaptador de Red", "mac_address": "Dirección MAC", "ip_address": "Dirección IP", "timezone": "Zona Horaria", "region": "Región", "auto_time_status": "Estado de Hora Automática", "auto_timezone_status": "Estado de Zona Horaria Automática", "ntp_status": "Estado de Comprobación NTP", "time_offset": "Desplazamiento Hora Sistema (s)", "device_id": "ID del Dispositivo", "product_id": "ID del Producto", "windows_version": "Versión de Windows", "windows_version_num": "Número de Versión de Windows", "install_date": "Fecha de Instalación", "os_build": "Build del SO"
+      }
+    },
+    "file_suffixes": {
+      "hardware": "RegistroHardware",
+      "events": "EventosUso"
+    },
+    "event_types": {
+      "start": "Inicio",
+      "close": "Cierre"
+    }
+  },
+  "status": {
+    "enabled": "Habilitado", "disabled": "Deshabilitado", "unexecuted": "No ejecutado", "success": "Éxito", "failure": "Fallo"
+  },
+  "region_map": {
+    "CN": "China", "US": "Estados Unidos", "JP": "Japón", "KR": "Corea del Sur", "GB": "Reino Unido"
+  }
+}
