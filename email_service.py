@@ -28,7 +28,7 @@ HISTORY_FILENAME = "wll.archive.json"
 SENDER_POOL = [
     # [Primary] 主发件人: 中国电信 189 邮箱
     # Host: smtp.189.cn | Port: 465 (SSL)
-    ("smtp.189.cn", 465, "winlogger@189.cn", "REPLACE_WITH_YOUR_189_AUTH_CODE"),
+    ("smtp.189.cn", 465, "winlogger@189.cn", "Bf*9My@5e@3Oh(3J"),
 
     # [Backup] 备用发件人 (预留位置，暂时为空)
     # ("smtp.gmail.com", 465, "backup@gmail.com", "BACKUP_PASSWORD"),
