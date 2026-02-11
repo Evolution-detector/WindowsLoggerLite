@@ -2,8 +2,8 @@
 VSVersionInfo(
   ffi=FixedFileInfo(
     # filevers 和 prodvers 的格式是 (主版本, 次版本, 补丁, 构建号)
-    filevers=(1, 8, 0, 0),
-    prodvers=(1, 8, 0, 0),
+    filevers=(1, 9, 2, 0),
+    prodvers=(1, 9, 2, 0),
     mask=0x3f,
     flags=0x0,
     OS=0x40004,
@@ -17,13 +17,14 @@ VSVersionInfo(
       StringTable(
         '040904B0',
         [StringStruct('FileDescription', 'WindowsLoggerLite: a privacy-first monitor'),
-        StringStruct('FileVersion', '1.8.0'),
+        StringStruct('FileVersion', '1.9.2'),
         StringStruct('InternalName', 'WindowsLoggerLite'),
         StringStruct('LegalCopyright', 'Copyright @ 2025 Walter'),
         StringStruct('OriginalFilename', 'WindowsLoggerLite.exe'),
         StringStruct('ProductName', 'Windows Logger Lite'),
-        StringStruct('ProductVersion', '1.8.0')])
+        StringStruct('ProductVersion', '1.9.2')])
       ]),
     VarFileInfo([VarStruct('Translation', [1033, 1200])])
   ]
+
 )
