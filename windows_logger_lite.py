@@ -5,7 +5,7 @@
 #
 # Author: Walter
 # Copyright: Copyright @ 2025, Walter
-# Version: 1.8.0 
+# Version: 1.9.0 
 #
 # Description: A discreet, privacy-first computer monitoring tool
 #              that records system activity locally.
@@ -34,6 +34,7 @@ from openpyxl import Workbook
 import ctypes
 from tkinter import Tk
 import re
+import email_service
 
 # ===================================================================================
 # --- CONFIGURATION & CONSTANTS ---
@@ -672,4 +673,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 #</editor-fold>
