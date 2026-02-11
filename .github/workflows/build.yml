@@ -1,0 +1,43 @@
+name: Build WindowsLoggerLite Exe
+
+# 触发机制：仅支持手动触发 (Manual Trigger Only)
+# 您需要在 GitHub 仓库的 "Actions" 页面点击 "Run workflow" 按钮来启动
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build EXE on Windows
+    runs-on: windows-latest # 使用 Windows 环境构建
+
+    steps:
+    # 1. 检出代码
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    # 2. 准备 Python 3.10 环境
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10' 
+
+    # 3. 安装依赖
+    # 注意：msoffcrypto 在 pip 中的包名是 msoffcrypto-tool
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller wmi psutil pywin32 msoffcrypto-tool ntplib openpyxl
+
+    # 4. 执行打包构建
+    # PyInstaller 会自动识别并打包 email_service.py，无需显式指定
+    - name: Build with PyInstaller
+      run: |
+        pyinstaller --noconsole --onefile --uac-admin --icon="WindowsLoggerLiteIcon.ico" --add-data="lang;lang" --version-file="version_info.txt" --name="WindowsLoggerLite" windows_logger_lite.py
+
+    # 5. 上传构建结果
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: WindowsLoggerLite-Release
+        path: dist/WindowsLoggerLite.exe
+        retention-days: 5
